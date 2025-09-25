@@ -17,6 +17,8 @@ models:
           - value_check
   - name: customer
     description: DBT model for customer table
+  - name: customer_view
+    description: DBT model to create a filtered view of customer table.
   
                 
 

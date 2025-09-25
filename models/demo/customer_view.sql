@@ -4,6 +4,5 @@
         materialized='view'
     )
 }}
-
-SELECT * FROM {{ref("customer")}}
-WHERE COUNTRY="USA"
+select * from {{ ref('customer') }}
+where COUNTRY ='USA'
