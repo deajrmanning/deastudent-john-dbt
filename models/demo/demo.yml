@@ -25,8 +25,10 @@ models:
     description: DBT model for product table
   - name: purchase
     description: DBT model for purchase table using update/insert.
-
-                
+  - name: clean_orders
+    description: DBT model to create clean orders temp table in snowflake.
+  - name: final_orders
+    description: DBT model to create the final orders table in your warehouse, from your clean_orders temp table.              
 
 
 sources:
@@ -55,3 +57,8 @@ sources:
     schema: PUBLIC
     tables:
       - name: PURCHASE_SRC
+  - name: clean_orders
+    database: DBT_DB
+    schema: PUBLIC
+    tables:
+      - name: BASE_ORDERS
