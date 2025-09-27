@@ -23,6 +23,9 @@ models:
     description: DBT model for sales table  
   - name: product
     description: DBT model for product table
+  - name: purchase
+    description: DBT model for purchase table using update/insert.
+
                 
 
 
@@ -47,3 +50,8 @@ sources:
     schema: PUBLIC
     tables:
       - name: PRODUCT_SRC  
+  - name: purchase
+    database: DBT_DB
+    schema: PUBLIC
+    tables:
+      - name: PURCHASE_SRC
