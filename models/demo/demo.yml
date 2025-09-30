@@ -31,8 +31,10 @@ models:
     description: DBT model to create the final orders table in your warehouse, from your clean_orders temp table.              
   - name: patient_snapshot
     description: DBT model to save a snap shot of data as it changes
-
-
+  - name: session
+    description: DBT model that incorporates seeds.
+  - name: country_code
+    description: Seed table for the country code, containing country specific information.
 sources:
   - name: employee
     database: DBT_DB
@@ -69,3 +71,13 @@ sources:
     schema: PUBLIC
     tables:
       - name: PATIENT_SRC
+  - name: session
+    database: DBT_DB
+    schema: PUBLIC
+    tables:
+      - name: SESSION_SRC
+  - name: country_code
+    database: DBT_DB
+    schema: PUBLIC
+    tables:
+      - name: COUNTRY_CODE
